@@ -5,6 +5,7 @@ import Projects from './pages/Projects'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
 import CreditCardPayment from './pages/CreditCardPayment'
+import NOTFOundPage from './pages/NOTFOundPage'
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/agence' element={<Agence />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/CreditCardPayment' element={<CreditCardPayment />} />
+        <Route path='*' element={<NOTFOundPage />} />
       </Routes>
     </div>
   )

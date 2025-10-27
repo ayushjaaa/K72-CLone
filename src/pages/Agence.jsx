@@ -2,8 +2,14 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useRef } from 'react'
+import { useContext } from 'react'
+import { NavbarContext } from '../context/NavContext'
+
+
+
 
 const Agence = () => {
+
 
   gsap.registerPlugin(ScrollTrigger)
 

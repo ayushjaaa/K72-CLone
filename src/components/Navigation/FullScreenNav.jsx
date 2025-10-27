@@ -2,13 +2,19 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useContext, useRef } from "react";
 import { NavbarContext } from "../../context/NavContext";
-
+import { useNavigate } from "react-router-dom";
 const FullScreenNav = () => {
   const fullNavLinksRef = useRef(null);
   const fullScreenRef = useRef(null);
   const [navOpen, setNavOpen] = useContext(NavbarContext);
-
+const naviagte = useNavigate()
   const tlRef = useRef(null);
+
+const NavigateHandeler = (title)=>{
+    setNavOpen(false)
+    naviagte(`${title}`)
+}
+
 
   // ✅ OPEN animation
   function gsapAnimation() {
@@ -118,7 +124,7 @@ const FullScreenNav = () => {
               <div className="moveLink absolute text-black flex top-0 bg-[#D3FD50]">
                 {[1, 2].map((x) => (
                   <div key={x} className="moveX flex items-center">
-                    <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase">
+                    <h2 onClick={()=>NavigateHandeler(title)}  className="whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase">
                       Pour Tout voir
                     </h2>
                     <img
